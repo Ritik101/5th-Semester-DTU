@@ -1,0 +1,306 @@
+Slide 2:
+
+Vertex cover problem is a NP-complete problem. If a problem is NP-complete, we
+are unlikely to find polynomial-time algorithm for solving it exactly, There are 
+two approaches to getting around NP completeness. First if the actual inputs are
+small, an algorithm with exponential running time may be perfectly satisfactory. 
+Second, it may still possible to find near optimal solutions in polynomial time. 
+In practice near optimality is often good enough. An algorithm that returns
+near-optimal solutions is called an approximation algorithm.
+
+
+----------------
+
+Slide 3: 
+
+Now The defination of vertex cover is that we consider a graph which contains V 
+vertices and E edges A vertex cover of an undirected graph is a subset v which
+belongs to set of vertices  V such that if (u, v) is an edge of Graaph, 
+then either u vertex belongs to  V’ or v vertex belongs V’ or both cam belong
+
+
+------------------
+Slide 4: 
+
+A vertex cover of a graph G is a set of vertices, let it be Vc , such that every 
+edge in G has at least one of vertex in Vc   as an endpoint. This means that 
+every vertex in the graph is touching at least one edge. Vertex cover is a topic 
+in graph theory that has applications in matching problems and optimization problems.
+A vertex cover might be a good approach to a problem where all of the edges in a
+graph need to be included in the solution.
+
+
+-------------------
+Slide 5: 
+slide 6: 
+slide 7: 
+slide 8: 
+-----------
+
+
+Slide 9: 
+Many problems of practical significance are NP-complete but are too important to
+abandon merely because obtaining an optimal solution is intractable. If a problem is
+NP-complete, we are unlikely to find a polynomial-time algorithm for solving it
+exactly,
+
+For the vertex cover problem, the approximation problem is to find the 
+    vertex cover with few vertices.
+
+An approximation algorithm for a problem is a polynomial-time algorithm that,
+
+ when given input i, outputs an element of FS(i). 
+
+	where fs(i) is the  feasible solution, whhich 
+ 	is an object of the right type but not 
+	necessarily an optimal one. 
+
+
+
+---------
+
+
+Slide 10: 
+First we Initialize the result as empty set. 
+Then we Consider a set of all edges in given graph. and  Let the set be E. 
+Then we Do the following while being E is not empty ...
+	a) Pick an arbitrary edge (u, v) from set E and add 'u' and 'v' to 
+	     result ...
+	b) Then we Remove all edges from E which are either incident on u or v. 4) 
+and then finally we Return result 
+
+
+
+
+-----------
+
+
+Slide 12: 
+This algorithm selects an arbitrary edge and removes the incident edges to it. 
+
+This process continues until to cover all the vertexes. 
+
+
+
+Slide 13: 
+
+At first edge (b, c) is chosen from Fig. (b), then the corresponding edges
+ like (b, a), (c, d) and (c, e) edges are discarded from the graph. 
+
+Next arbitrary
+edge (e, f) is chosen and edge (e, d) is discarded
+
+
+
+Slide 14: 
+Lastly arbitrary edge (d, g) is chosen. After then no edge remains to be discarded. 
+So the vertex cover set is 
+{b, c, d, e, f, g}.
+
+Then  at last The final  solution of above graph according to the approximate 
+algorithm is 
+{b, c, d, e, f, g}. 
+
+
+Slide 15:
+
+Since there is  the loop in algorithm at the  lines (3 to 6) which repeatedly picks 
+an edge (u, v) from E' and adds its endpoints u and v to C, ,  and deletes all edges in E' that are covered 
+by either u or v.  
+
+here as we know c is the final set of vertex cover that has to be return
+The running time of this algorithm is O (E).
+
+
+
+Slide 16: 
+we have first the simplest greedy algorithm 
+A natural heuristic for Vertex Cover is a greedy algorithm which repeatedly 
+picks an edge that has not yet been covered, and places one of its end-points 
+in the current covering set.
+the idea behind this algo is first we keep.....(reads 1. point).
+(reads as it is all the steps).
+
+
+
+Slide 17:
+
+this is the sudo code 
+here we initialise c as phy.
+And we have a unempty set e from which we pick an edge e which belongs one of the 
+edges of the graaph have and then choose 
+its end-point vertex v.
+
+Then take a union of result c with v vertex and add it to the c 
+and remove v and all its incident edges from the graph.
+And in this similar manner we covered all the uncovered edges and exit the loop.
+and finalliy we return our result as c.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Slide 18: 
+
+Let we take a graph ..
+here all vertexes are A B C D E F G
+and we take our result vector as phy.
+
+now first we choose the maximum degree from which C D E F are haveing maximum degree
+Now we choose vertex c and add it into our result
+
+after all we delete all incident of c.
+
+so afterward  our graph will look like this.
+Now here our max degree vertex are F and we add it into our c vector..
+
+now we delete all incident of vertex f
+
+----------------
+Slide 19: 
+
+in next image the max degree vertex are B and we choosed it.. and delete all the incident of b
+
+
+after all inlast we left with E and f both having same degree os we choose e here and add it in our rersult.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Slide 20: 
+c covers this edges and so on (tell this).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Slide 21:
+As we claim that the simplest greedy does not achieve any bounded ratio.
+
+The vertex set L consists of r vertices. The vertex set R is 
+further sub-divided into r sets called R1, . . . , Rr. Each vertex
+ in Ri has an edge to i vertices in L and no two vertices in Ri 
+ have a common neighbor in L. It follows that each vertex in L has
+  degree at most r and each vertex in Ri has degree i. 
+
+
+The total number of vertices n = Q(r log r).
+
+
+
+Slide 22:
+
+As the optimal solution of this graph is 6 when we select all red vertices
+Greedy approach does not always lead to the best approximation  algorithm.
+
+
+
+
+Slide 23:
+Unfortunately if we select the vertices in following order, then we  will get 
+worst solution for this vertex cover problem-
+
+(read the points as it is..in the slide)
+
+Which lead to the solution 11.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Slide 24:
+So we have another greedy algorithm.
+
+How do we achieve a better ratio than previous greedy? 
+Let us try the obvious strategy of modifying the Algorithm GREEDY1 
+to be less arbitrary in its choice of vertices to be included in 
+the cover. A natural modification is to repeatedly choose vertices 
+which are incident to the largest number of currently uncovered edges.
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+slide 25: 
+this is the sudo code 
+here we initialise c as phy.
+And we have a unempty set e from which we pick a vertex v which belongs to the vertices of graph, and 
+the choosen vertex has maximum degree in the curernt graph.
+
+Then take a union of result c with v vertex and add it to the c 
+and remove v and all its incident edges from the graph.
+And in this similar manner we covered all the uncovered edges and exit the loop.
+and finalliy we return our result as c.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Slide 26: 
+Let us consider the behaviour of this algorithm on the graph B. 
+
+It should be easy to see that GREEDY2 could also output R as a vertex cover. It could choose vertices from Rr at the very first stage. After this, it could choose vertices from Rr-1. 
+
+In general, it would choose the highest degree vertices from R at each stage. It is very surprising that a seemingly much more intelligent heuristic does no better than the rather simple-minded heuristic GREEDY1. 
+
+However this algorithm is not totally useless. It may be shown that it always achieves the
+
+ ratio O(log n) for the much more general problem of set cover and hence also for vertex cover.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Slide 27:
+so now the question is what is matching graph. 
+ A matching graph is a subgraph of a graph G where there are no
+ edges adjacent to each other 
+ 
+We now describe a different heuristic which achieves a bounded ratio 
+for the vertex cover problem. The basic idea is to modify GREEDY1 by placing
+ both end-points of some uncovered edge into C. 
+Most people find the fact that this algorithm performs better than GREEDY1 
+and GREEDY2 to be very counter-intuitive at first. 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Slide 28: 
+
+its a claim that Maximal Matching  always computes a vertex cover in the input 
+graph G. 
+
+Moreover, it is a 2-approximation algorithm. 
+Since M is a maximal matching all edges in E \ M are such that at least one of 
+their end-points is incident to some e ? M (otherwise, that edge could be added 
+to M to provide a larger matching). 
+
+Thus every edge in E has at least one end-point in C. 
+To see that the ratio is 2, consider the edges in M. 
+
+To cover these edges we need at least |M| vertices, since no two of them share a
+ vertex. This implies that the optimal vertex cover has size at least |M|. 
+
+The cover C contains exactly 2|M| vertices.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

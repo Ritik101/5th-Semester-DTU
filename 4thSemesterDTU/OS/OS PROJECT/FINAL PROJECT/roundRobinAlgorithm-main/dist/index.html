@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round Robin Algorithm</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main>
+    
+    <section class="section-a">
+      <div class="bannerContainer">
+        <div class="mainBanner">
+          <h1>Round Robin Optimization</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-b">
+      <div class="container">
+        <p class="RR-main-content py-1">
+          The Round Robin Scheduling Algorithm is a type of scheduling algorithm mainly used by the operating system and applications that serve multiple clients that request to use resources. 
+          Each process is arranged in the ready queue in a first-come first-served manner, and the processor executes the task from the ready queue on the basis of a time slice. 
+          Even though the process might not have finished execution, once the time slice ends, the process is pushed to the back of the ready queue and the next process starts executing. 
+          It does this repeatedly until the jobs are finished.
+        </p>
+      </div>
+    </section>
+    <section class="section-c bg-1">
+      <div class="container">
+        <div class="characteristics">
+          <h2 class="primaryHeading py-1">Characteristics OF Round Robin ALGORITHM</h2>
+          <div class="RR-characteristics">
+            <p><span>1.</span> Round robin is a pre-emptive algorithm.</p>
+            <p><span>2.</span> The CPU is shifted to the next process after fixed interval time, which is called time quantum/time slice.</p>
+            <p><span>3.</span> The process that is preempted is added to the end of the queue.</p>
+            <p><span>4.</span> Time slice should be minimum, which is assigned for a specific task that needs to be processed.<p>
+            <p><span>5.</span> It is a real time algorithm which responds to the event within a specific time limit.</p>
+            <p><span>6.</span> Round robin is one of the oldest, fairest, and easiest algorithm.</p>
+            <p><span>7.</span> Widely used scheduling method in traditional OS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-d">
+      <div class="container">
+        <div class="example">
+          <h2 class="primaryHeading mg-1">example of round robin </h2>
+          <div class="exampleRR">
+            <img src="./images/ExampleRR.png" alt="ExampleRR" >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-e bg-1">
+      <div class="container">
+        <div class="disadvantages">
+          <h2 class="primaryHeading mg-1">DISADVANATGES OF ROUND ROBIN</h2>
+          <div class="content py-1">
+            <div class="item-1 mg-1">
+              <h3 class="secondaryHeading">Poor average waiting time when jobs have similar lengths</h3>
+              <p class="mg-1">- Imagine N jobs each requiring T time slices</p>
+              <p>- RR: all complete roughly around time N*T</p>
+              <p style="color: red; font-weight: bold;">- Average waiting time is even worse than FCFS!</p>
+            </div>
+            <div class="item-2 mg-1">
+              <h3 class="secondaryHeading">Performance depends on length of time slice</h3>
+              <p class="mg-1">- Too high degenerate to FCFS</p>
+              <p>- Too low too many context switch, costly</p>
+              <p>- How to set time-slice length?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-f">
+      <div class="container">
+        <div class="optimization">
+          <h2 class="primaryHeading py-1">OPTIMIZATION OF ROUND ROBIN</h2>
+          <div class="content">
+            <p><span>1.</span> The proposed algorithm is similar to traditional Round Robin algorithm with a small improvement. </p>
+            <p><span>2.</span> We are arranging the processes in ascending order according to their burst time present in the ready queue. </p>
+          </div>
+          <div class="steps">
+            <div>
+              <p style="font-weight: bold; color: red;">Start</p>
+              <img src="./images/icons8-down-arrow-100.png" alt="arrowDown">
+            </div>
+            <div>
+              <p>Enter the process number, arrival time and burst time.</p>
+              <img src="./images/icons8-down-arrow-100.png" alt="arrowDown">
+
+            </div>
+            <div>
+              <p>Make a ready queue of the processes.</p>
+              <img src="./images/icons8-down-arrow-100.png" alt="arrowDown">
+
+            </div>
+            <div>
+              <p>Arrange the processes in ascending order based on their burst time.</p>
+              <img src="./images/icons8-down-arrow-100.png" alt="arrowDown">
+
+            </div>
+            <div>
+              <p>Start executing the processes in the arranged manner.</p>
+              <img src="./images/icons8-down-arrow-100.png" alt="arrowDown">
+
+            </div>
+            <div>
+              <p style="font-weight: bold; color: red">END</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section-g bg-1">
+      <div class="container">
+        <h2 class="primaryHeading py-1">Stimulate</h2>
+        <div class="content">
+          <div class="table-content">
+              <table id="table">
+                  <tr>
+                      <th> PROCESS</th>
+                      <th> ARRIVAL TIME</th>
+                      <th> BURST TIME</th>
+                      <th class="table-visiblity">WAITING TIME</th>
+                      <th class="table-visiblity">TURNAROUND TIME</th>
+                      <th class="table-visiblity">COMPLETION TIME</th>
+                  </tr>
+                  <tr id="1">
+                      <td>P1</td>
+                      <td><input id="p1-arival" class="input-value" type="number" min="0" value="0" required></td>
+                      <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
+                      <td class="table-visiblity" id="p1-waiting">3</td>
+                      <td class="table-visiblity" id="p1-turnaround">5</td>
+                      <td class="table-visiblity" id="p1-completion">5</td>
+                  </tr>
+                  <tr id="2">
+                      <td>P2</td>
+                      <td><input id="p2-arival" class="input-value" type="number" min="0" value="0" required></td>
+                      <td><input id="p1-burst" class="input-value" type="number" min="0" value="0" required></td>
+                      <td class="table-visiblity"  id="p2-waiting">3</td>
+                      <td class="table-visiblity"  id="p2-turnaround">5</td>
+                      <td class="table-visiblity"  id="p2-completion">5</td>
+                  </tr>
+              </table>
+              <div class="buttons">
+                  <a class="row-button" onclick="refresh()"><i class="fas fa-redo"></i></a><br>
+                  <a class="row-button" id="addRowBtn" onclick="addRow()"><i class="fas fa-plus"></i></a><br>
+                  <a class="row-button" id="removeRowBtn" onclick="removeRow()"><i class="fas fa-minus"></i></a>
+              </div>
+          </div>
+          <div class="input-quantum">
+              <label for="quantum">Quantum : </label>
+              <input type="number" min="1" max="99" id="quantum">
+          </div>
+          <a class="submit" id="submit" onclick="runSimulation()"><i class="fas fa-play"></i>START SIMULATION</a>
+      </div>
+      </div>
+    </section>
+  </main>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;1,100;1,200&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/26899afeb6.js" crossorigin="anonymous"></script>
+    <script src="js/process.js"></script>
+    <script src="js/block.js"></script>
+    <script src="js/queue.js"></script>
+    <!-- <script src="js/minHeap.js"></script> -->
+    <!-- <script src="js/sjf.js"></script> -->
+    <!-- <script src="js/sjf-nonpreemptive.js"></script> -->
+    <!-- <script src="js/FCFS.js"></script> -->
+    <script src="js/round-robin.js"></script>
+    <script src="js/draw.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Process ID', 'FCFS', 'SJFS', 'RR','PS' ],
+      ['P1', 10, 16, 12, 8 ],
+      ['P2', 12, 2, 7,  2],
+      ['P3', 20, 16, 25, 26],
+      ['P4', 26, 8, 26, 8],
+      ['AvgWT', 17, 13, 20, 13.5]
+    ]);
+
+    var options = {
+      chart: {
+        title: 'Turnaround Time & Avg Turnaround Time',
+        subtitle: '',
+      }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+  }
+</script>

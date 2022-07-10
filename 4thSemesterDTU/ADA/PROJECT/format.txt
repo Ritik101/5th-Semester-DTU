@@ -1,0 +1,9 @@
+explain the problem
+explain the NP complete problem
+from which algorithms, this problem can solve
+    steps for algorithm
+    psudo code
+    Time complexity.
+repeat 
+comarison of time complexties for this algo
+example

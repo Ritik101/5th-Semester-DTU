@@ -1,0 +1,43 @@
+
+Starvation: The scheduling algorithm prevents a process from ever completing
+Convoy Effect: The scheduling algorithm allows long-running jobs to dominate the CPU
+
+
+
+[1] Turnaround time: is the time interval from the submission time of a process to the completion time of a process. 
+[2] Waiting time is the sum of periods spent waiting in the ready queue. The time from the submission of a process until 
+the first response is called Response time. 
+[3] CPU utilization is the percentage of time CPU remains busy. The number of processes completed per unit time is called Throughput. 
+[4] Context switch is the process of swap-out the pre-executed process  from CPU and swap-in a new process to CPU.
+
+
+II.   Round Robin Scheduling
+
+Round-robin scheduling is designed for time-sharing system.
+It is similar to the FCFS scheduling, but preemptive is added to switch between processes. 
+A time quantum is typically 10 to 100 milliseconds. 
+The ready queue is implemented in FIFO manner.
+If a process needs less than a time quantum, it releases the CPU    	    voluntarily.
+If a process needs more than a time quantum, it is preempted from the CPU and placed at the back of the ready queue.
+
+
+According to Silberchatz, Galvin, Gagne in operating system design and operating system by D M Dhamdhere, 
+the simple RR scheduling algorithm is given by following steps:- 
+
+1. 	The schedular maintains a queue of ready 
+processes and a list of blocked and swapped out 
+processes. 
+2. 	The PCB of newly created process is added to end 
+of ready queue. The PCB of terminating process is 
+removed from the scheduling data structures. 
+3. 	The schedular always selects the PCB at head of 
+the ready queue. 
+4. 	When a running process finishes its slice, it is 
+moved to end of ready queue. 
+5. 	The event handler perform the following action 
+a) When a process makes an input -output request or 
+swapped out,its PCB is removed from ready queue to 
+blocked/swapped out list 
+b)When input-output operation awaited by a process 
+finishes or process is swapped in its process control block is 
+removed from blocked/swapped list to end of ready queue. 
